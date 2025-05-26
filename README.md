@@ -4,6 +4,7 @@ Simple application for booking flights.
 
 ## Requirements
 
+- git
 - Node.js (v16.20.2)
 - yarn
 - angular-cli (v13.3.11)
