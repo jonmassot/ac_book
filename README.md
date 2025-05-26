@@ -40,7 +40,7 @@ Simple application for booking flights.
   - View profile details
   - View booked flights
 
-## Requirements
+## Criteria
 
 - [x] *-- No authentication for now --*
   - [ ] Pick random profile on load to book
@@ -52,8 +52,9 @@ Simple application for booking flights.
 - [ ] Implement flight search functionality
   - [ ] Use mock data for flights
   - [ ] Display search results in a user-friendly format
-  - [ ] Display search details
+  - [ ] Display additional flight details
 - [ ] Implement admin functionalities
-  - [ ] See and search profiles
+  - [x] List all profiles
+  - [ ] Search profiles by username, firstname or lastname
   - [ ] View profile details
-  - [ ] View booked flights
+  - [ ] View booked flights per profile
