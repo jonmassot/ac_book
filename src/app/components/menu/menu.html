@@ -5,12 +5,12 @@
       mat-raised-button
       color="primary"
       class="close-button"
-      (click)="closeMenu()"
+      (click)="toggleMenu()"
     >
-      X
+      {{showMenu ? "Close menu" : "Open menu"}}
     </button>
   </div>
-  <ul class="menu-list">
+  <ul *ngIf="showMenu" class="menu-list">
     <li *ngFor="let item of menuItems" (click)="selectItem(item)">
       <a [routerLink]="item.link">{{ item.name }}</a>
     </li>
