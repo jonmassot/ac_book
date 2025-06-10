@@ -48,7 +48,7 @@ Simple application for booking flights.
   - [x] Use Angular State management to store current profile
 - [x] Build mock server for testing and development
   - [x] Use faker to generate mock data in mocked services
-- [ ] Add angular material to layout
+- [x] Add angular material to layout
 - [] Create booking page
 - [x] Implement flight search functionality
   - [x] Use mock data for flights

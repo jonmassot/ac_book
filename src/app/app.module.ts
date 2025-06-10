@@ -12,6 +12,7 @@ import { FlightService } from './services/flight';
 import { UserService } from './services/user';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProfileComponent } from './components/profile/profile';
     MatTableModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
   ],
   providers: [UserService, FlightService],
   bootstrap: [AppComponent],
