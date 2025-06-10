@@ -1,0 +1,7 @@
+<div>Booked flights</div>
+<div *ngFor="let flight of bookedFlights$ | async" style="display: flex">
+  <h3>{{ flight.flightNumber }}</h3>
+  <button (click)="removeFlightFromCurrentBookedFlights(flight.id)">
+    Cancel
+  </button>
+</div>

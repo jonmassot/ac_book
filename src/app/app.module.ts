@@ -13,6 +13,7 @@ import { UserService } from './services/user';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile';
 import { MatButtonModule } from '@angular/material/button';
+import { BookedFlightComponent } from './components/booked-flight/booked-flight';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     UsersComponent,
     BookFlightComponent,
     ProfileComponent,
+    BookedFlightComponent,
   ],
   imports: [
     BrowserModule,

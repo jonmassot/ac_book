@@ -1,10 +1,19 @@
+import { Injectable } from '@angular/core';
 import { faker } from '@faker-js/faker';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Flight } from 'src/app/models/flight';
 
 const planeBrands = ['Boeing', 'Airbus', 'Concorde', 'Embraer', 'Bombardier'];
+
+@Injectable({
+  providedIn: 'root',
+})
 export class FlightService {
   constructor() {}
+
+  private bookedFlightsSubject = new BehaviorSubject<Flight[]>([]);
+  public bookedFlights$: Observable<Flight[]> =
+    this.bookedFlightsSubject.asObservable();
 
   public getFlights(): Observable<Flight[]> {
     const flights: Flight[] = [];
@@ -26,5 +35,23 @@ export class FlightService {
     }
 
     return of(flights);
+  }
+
+  public getCurrentBookedFlights(): Flight[] {
+    return this.bookedFlightsSubject.getValue();
+  }
+
+  public addFlightToCurrentBookedFlights(flight: Flight): void {
+    const currentBookedFlights = this.bookedFlightsSubject.getValue();
+
+    this.bookedFlightsSubject.next([...currentBookedFlights, flight]);
+  }
+
+  public removeFlightFromCurrentBookedFlights(id: number): void {
+    const updated = this.bookedFlightsSubject
+      .getValue()
+      .filter((flight) => flight.id !== id);
+
+    this.bookedFlightsSubject.next(updated);
   }
 }

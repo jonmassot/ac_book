@@ -22,10 +22,11 @@ export class BookFlightComponent {
     'cargoCapacity',
     'planeAge',
     'planeType',
+    'action',
   ];
 
-  constructor(private usersService: FlightService) {
-    this.usersService.getFlights().subscribe({
+  constructor(private flightService: FlightService) {
+    this.flightService.getFlights().subscribe({
       next: (flights: Flight[]) => {
         this._flights = flights;
       },
@@ -45,5 +46,11 @@ export class BookFlightComponent {
 
   public handleClearFilter(): void {
     this.flightSearch = '';
+  }
+
+  public bookFlight(flight: Flight): void {
+    this.flightService.addFlightToCurrentBookedFlights(flight);
+
+    this._flights = this._flights.filter((f) => f.id !== flight.id);
   }
 }

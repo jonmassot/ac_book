@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './components/users/users';
 import { BookFlightComponent } from './components/book-flight/book-flight';
 import { ProfileComponent } from './components/profile/profile';
+import { BookedFlightComponent } from './components/booked-flight/booked-flight';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'profile/:email',
     component: ProfileComponent,
+  },
+  {
+    path: 'booked-flight',
+    component: BookedFlightComponent,
   },
 ];
 
