@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent {
   private _users: UserProfile[] = [];
+  public _user: UserProfile | undefined = this.usersService.getCurrentUser();
 
   public displayedColumns: string[] = [
     'username',

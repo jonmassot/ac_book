@@ -1,9 +1,14 @@
 import { faker } from '@faker-js/faker';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { UserProfile } from 'src/app/models/profile';
 
 export class UserService {
   private _profiles: UserProfile[] = [];
+
+  private randomProfileSubject = new BehaviorSubject<UserProfile | undefined>(
+    undefined
+  );
+  public randomProfile$ = this.randomProfileSubject.asObservable();
 
   constructor() {
     this.generateProfiles();
@@ -24,13 +29,21 @@ export class UserService {
           city: faker.location.city(),
           state: faker.location.state(),
           zipCode: faker.location.zipCode(),
-          country: faker.location.country()
-        }
+          country: faker.location.country(),
+        },
       });
     }
   }
 
   public getUsers(): Observable<UserProfile[]> {
     return of(this._profiles);
+  }
+
+  public setCurrentUser(user: UserProfile): void {
+    this.randomProfileSubject.next(user);
+  }
+
+  public getCurrentUser(): UserProfile | undefined {
+    return this.randomProfileSubject.getValue();
   }
 }

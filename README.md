@@ -44,8 +44,8 @@ Simple application for booking flights.
 ## Criteria
 
 - [x] _-- No authentication for now --_
-  - [ ] Pick random profile on load to book
-  - [ ] Use Angular State management to store current profile
+  - [x] Pick random profile on load to book
+  - [x] Use Angular State management to store current profile
 - [x] Build mock server for testing and development
   - [x] Use faker to generate mock data in mocked services
 - [ ] Add angular material to layout
