@@ -2,4 +2,7 @@
   <app-menu></app-menu>
 </div>
 
+<div *ngIf="randomUser">
+  Randomly chosen user stored in rxjs: <b>{{ randomUser.username }}</b>
+</div>
 <router-outlet></router-outlet>

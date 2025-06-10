@@ -1,9 +1,16 @@
 <div class="menu">
   <div class="menu-header">
     <h1>Menu</h1>
-    <button class="close-button" (click)="closeMenu()">X</button>
+    <button
+      mat-raised-button
+      color="primary"
+      class="close-button"
+      (click)="toggleMenu()"
+    >
+      {{showMenu ? "Close menu" : "Open menu"}}
+    </button>
   </div>
-  <ul class="menu-list">
+  <ul *ngIf="showMenu" class="menu-list">
     <li *ngFor="let item of menuItems" (click)="selectItem(item)">
       <a [routerLink]="item.link">{{ item.name }}</a>
     </li>

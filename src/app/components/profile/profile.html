@@ -1,0 +1,13 @@
+<div>Profile page of {{email}}</div>
+<div *ngIf="profile">
+  <div>Username: {{profile.username}}</div>
+  <div>First name: {{profile.firstName}}</div>
+  <div>Last name {{profile.lastName}}</div>
+  <div>Phone number: {{profile.phoneNumber}}</div>
+  <div>
+    Address: {{profile.address.street}}, {{profile.address.city}},
+    {{profile.address.state}}, {{profile.address.country}},
+    {{profile.address.zipCode}}
+  </div>
+  <div>Admin: {{profile.isAdmin}}</div>
+</div>

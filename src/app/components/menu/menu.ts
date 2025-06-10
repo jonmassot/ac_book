@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 interface MenuItem {
   name: string;
@@ -17,11 +17,14 @@ export class MenuComponent {
   public menuItems: MenuItem[] = [
     { name: 'Home', icon: 'home', link: '/' },
     { name: 'Users', icon: 'person', link: '/users' },
-    { name: 'Book', icon: 'book', link: '/book' }
+    { name: 'Book', icon: 'book', link: '/book' },
+    { name: 'Booked flight', icon: 'plane', link: '/booked-flight' },
   ];
 
-  closeMenu(): void {
-    // TODO: Implement menu close functionality
+  public showMenu: boolean = true;
+
+  toggleMenu(): void {
+    this.showMenu = !this.showMenu;
   }
 
   selectItem(item: MenuItem): void {

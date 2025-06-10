@@ -2,20 +2,30 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './components/users/users';
 import { BookFlightComponent } from './components/book-flight/book-flight';
+import { ProfileComponent } from './components/profile/profile';
+import { BookedFlightComponent } from './components/booked-flight/booked-flight';
 
 const routes: Routes = [
   {
     path: 'users',
-    component: UsersComponent
+    component: UsersComponent,
   },
   {
     path: 'book',
-    component: BookFlightComponent
-  }
+    component: BookFlightComponent,
+  },
+  {
+    path: 'profile/:email',
+    component: ProfileComponent,
+  },
+  {
+    path: 'booked-flight',
+    component: BookedFlightComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
