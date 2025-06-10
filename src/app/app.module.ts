@@ -11,6 +11,7 @@ import { UsersComponent } from './components/users/users';
 import { FlightService } from './services/flight';
 import { UserService } from './services/user';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     UsersComponent,
     BookFlightComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

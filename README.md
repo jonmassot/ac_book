@@ -56,6 +56,6 @@ Simple application for booking flights.
   - [x] Display additional flight details
 - [ ] Implement admin functionalities
   - [x] List all profiles
-  - [ ] Search profiles by username, firstname or lastname
-  - [ ] View profile details
+  - [x] Search profiles by username, firstname or lastname
+  - [x] View profile details
   - [ ] View booked flights per profile
